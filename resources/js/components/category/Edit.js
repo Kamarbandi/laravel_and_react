@@ -38,6 +38,7 @@ export default class Edit extends Component {
             .then(res=>Console.log(res.data));
     }
 
+
     render() {
         return (
             <div>
