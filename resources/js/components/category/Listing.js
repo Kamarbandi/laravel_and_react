@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 export default class Listing extends Component {
 
@@ -60,7 +61,10 @@ export default class Listing extends Component {
                                     <td>{category.status==1?("Active"):("InActive")}</td>
                                     <td>{category.created_at}</td>
                                     <td>{category.updated_at}</td>
-                                    <td><a href="#" onClick={this.onDelete.bind(this, category.id)}>Delete</a></td>
+                                    <td>
+                                        <Link to={`/category/edit/${category.id}`}>Edit</Link> |
+                                        <a href="#" onClick={this.onDelete.bind(this, category.id)}>Delete</a>
+                                    </td>
                                 </tr>
                             )
                         })
